@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cassert>
-#include <vector>
 #include "List.h"
 
 using namespace std;
