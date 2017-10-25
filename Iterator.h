@@ -3,7 +3,6 @@
 
 class Iterator {
 public:
-    Iterator() : link(nullptr) {}
     void operator++();
 	int& operator*() const;
     bool operator== (const Iterator& rhs);
