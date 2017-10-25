@@ -87,6 +87,7 @@ void erase(){
     a.push_back(0);
     it = a.begin();
     it = a.erase(it);
+    assert(a.size() == 0);
     
     a.push_back(1);
     a.push_back(2);

@@ -106,8 +106,7 @@ Iterator List::erase(Iterator it){
     Link* temp1 = it.link;
     
     if (temp1->next == nullptr){
-        delete temp1;
-        temp1 = nullptr;
+        pop_front();
         return Iterator(head);
     }
     
