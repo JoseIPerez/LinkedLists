@@ -3,8 +3,8 @@
 
 class Iterator {
 public:
+    int& operator*() const;
     void operator++();
-	int& operator*() const;
     bool operator== (const Iterator& rhs);
 
 private:
