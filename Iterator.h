@@ -4,7 +4,7 @@
 class Iterator {
 public:
     void operator++();
-	int& operator*() const;
+    int& operator*() const;
     bool operator== (const Iterator& rhs);
 
 private:
