@@ -87,14 +87,15 @@ void erase(){
     a.push_back(0);
     it = a.begin();
     it = a.erase(it);
-    assert(a.size() == 0);
     
     a.push_back(1);
     a.push_back(2);
     a.push_back(3);
     it = a.begin();
+    assert(*it == 1);
     ++it;
     it = a.erase(it);
+    assert(*it == 3);
     assert(a.size() == 2);
 }
 
@@ -103,11 +104,9 @@ void insert(){
     List a;
     Iterator it = a.begin();
     Iterator end = a.end();
-    assert(a.size() == 0);
     
     it = a.insert(it, 1);
     assert(*it == 1);
-    assert(a.size() == 1);
     ++it;
     
     it = a.insert(it, 2);
