@@ -103,14 +103,21 @@ void insert(){
     List a;
     Iterator it = a.begin();
     Iterator end = a.end();
-    
-    it = a.insert(it, 1);
+    //Better test code for insert to test correct insert
+    a.push_back(1);
+    a.push_back(2);
+    a.push_front(0);
+    it = a.begin();
+    it = a.insert(it, 5);
+    assert(*it == 5);
+    ++it;
+    assert(*it == 0);
+    ++it;
     assert(*it == 1);
     ++it;
-    
-    it = a.insert(it, 2);
     assert(*it == 2);
-    assert(a.size() == 2);
+    ++it;
+    it = a.end();
 }
 
 int main(int argc, char * args[]) {
