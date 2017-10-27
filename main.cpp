@@ -5,7 +5,7 @@
 using namespace std;
 
 //testing if LinkedList is empty
-void test1(){
+void isEmpty(){
     List a;
     assert(a.empty() == true);
     assert(a.size() == 0);
@@ -23,23 +23,35 @@ void test1(){
 }
 
 //testing the size after push_back and push_front
-void test2(){
+void push_front(){
     List a;
-    a.push_back(1);
-    a.push_back(2);
-    
-    assert(a.empty() == false);
-    assert(a.size() == 2);
-    
-    a.push_back(3);
-    a.push_back(4);
+    a.push_back(5);
+    a.push_front(4);
+    a.push_front(3);
+    a.push_front(2);
+    a.push_front(1);
     a.push_front(0);
-    
-    assert(a.size() == 5);
+
+    Iterator it = a.begin();
+    Iterator end = a.end();
+    it = a.begin();
+    assert(*it == 0);
+    ++it;
+    assert(*it == 1);
+    ++it;
+    assert(*it == 2);
+    ++it;
+    assert(*it == 3);
+    ++it;
+    assert(*it == 4);
+    ++it;
+    assert(*it == 5);
+    ++it;
+    it = a.end();
 }
 
 //testing the *it asserting (was bugging out because pop_back)
-void test3(){
+void push_back(){
     List a;
     Iterator it = a.begin();
     Iterator end = a.end();
@@ -54,6 +66,8 @@ void test3(){
     assert(*it == 2);
     ++it;
     assert(*it == 3);
+    ++it;
+    it = a.end();
 }
 
 //testing pop_back()
@@ -72,9 +86,10 @@ void pop_back(){
     a.pop_back();
     a.pop_front();
     a.pop_back();
-    assert(a.size() == 1);
     it = a.begin();
     assert(*it == 2);
+    ++it;
+    it = a.end();
 }
 
 //testing Iterator erase
@@ -95,7 +110,8 @@ void erase(){
     ++it;
     it = a.erase(it);
     assert(*it == 3);
-    assert(a.size() == 2);
+    ++it;
+    it = a.end();
 }
 
 //testing Iterator insert
@@ -121,9 +137,9 @@ void insert(){
 }
 
 int main(int argc, char * args[]) {
-    test1();
-    test2();
-    test3();
+    isEmpty();
+    push_front();
+    push_back();
     pop_back();
     erase();
     insert();
